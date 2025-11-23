@@ -1,4 +1,5 @@
 import AuthIllustration from "../assets/images/auth_illustration.png"
+import {Link} from "react-router-dom"
 
 function LoginPage() {
     return (
@@ -16,6 +17,18 @@ function LoginPage() {
                             <p className="max-w-[452px] text-gray-600/95 lg:text-lg">
                                 Create a social media app with features like, showing the post,
                                 post details, reactions, comments and profile.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+
+                        <div className="py-4 lg:py-6">
+                            <p className="text-center text-xs text-gray-600/95 lg:text-sm">
+                                Don’t have account?
+                                <Link
+                                    className="text-white transition-all hover:text-lwsGreen hover:underline"
+                                    to ="/register"
+                                >Create New</Link>
                             </p>
                         </div>
                     </div>
