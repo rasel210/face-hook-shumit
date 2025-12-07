@@ -1,5 +1,6 @@
 import AuthIllustration from "../assets/images/auth_illustration.png"
 import {Link} from "react-router-dom"
+import LoginForm from "../components/auth/LoginForm"
 
 function LoginPage() {
     return (
@@ -21,7 +22,7 @@ function LoginPage() {
                         </div>
                     </div>
                     <div class="card">
-
+                        <LoginForm/>
                         <div className="py-4 lg:py-6">
                             <p className="text-center text-xs text-gray-600/95 lg:text-sm">
                                 Don’t have account?
