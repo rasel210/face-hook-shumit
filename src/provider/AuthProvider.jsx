@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import AuthContext from '../context'
+import { useState } from 'react'
+import {AuthContext} from '../context'
 
 const AuthProvider = ({ children}) => {
 

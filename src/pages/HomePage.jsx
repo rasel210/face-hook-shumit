@@ -1,10 +1,14 @@
 import React from 'react'
-import Headers from '../common/Headers'
+import useAuth from '../components/hooks/useAuth'
 
 function HomePage() {
+
+  const { auth } = useAuth();
+  console.log(auth);
+
   return (
     <div>
-      <Headers/>
+      <p>Home page</p>
     </div>
   )
 }

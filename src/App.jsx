@@ -1,16 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import HomePage from './pages/HomePage'
+import LoginPage from './pages/LoginPage'
+import ProfilePage from './pages/ProfilePage'
+import RegistrationPage from './pages/RegistrationPage'
+import NotFoundPage from './pages/NotFoundPage'
+import PrivateRoutes from './routes/PrivateRoutes'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      
-      <h1 className='text-3xl text-red-600'>Vite + React</h1>
-      
+      <Routes>
+        <Route element={<PrivateRoutes />}>
+          <Route element={<HomePage />} path='/' />
+          <Route element={<ProfilePage />} path='/profile' />
+
+        </Route>
+
+        <Route element={<LoginPage />} path='/login' />
+        <Route element={<RegistrationPage />} path='/register' />
+        <Route element={<NotFoundPage />} path='*' />
+      </Routes>
     </>
   )
 }
