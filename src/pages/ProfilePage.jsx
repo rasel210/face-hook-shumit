@@ -36,8 +36,11 @@ function ProfilePage() {
   }
 
 
-  return (
-    <div>{user?.firstName} {' '} {user?.lastName}</div>
+  return ( 
+    <div>
+      Welcome, {user?.firstName} {' '} {user?.lastName}
+      <p>You have {posts?.length} posts.</p>
+      </div>
   )
 }
 
