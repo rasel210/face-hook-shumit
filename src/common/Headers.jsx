@@ -33,7 +33,8 @@ function Headers() {
           <Logout/>
 
           <button className="flex-center !ml-8 gap-3">
-            <span className="text-lg font-medium lg:text-xl">{auth?.user?.firstName}</span>
+            <Link to="/profile">
+            <span className="text-lg font-medium lg:text-xl">{auth?.user?.firstName}</span></Link>
             <img className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
               src={avatar} />
           </button>
