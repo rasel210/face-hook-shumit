@@ -15,22 +15,22 @@ const profileReducer = (state, action) => {
             return {
                 ...state,
                 loading: true
-            }
+            };
         }
-        case action.profile.DATA_FETCHED: {
+        case actions.profile.DATA_FETCHED: {
             return {
                 ...state,
                 loading: false,
                 user: action.data.user,
                 posts: action.data.posts
-            }
+            };
         }
-        case action.profile.DATA_FETCH_ERROR:{
+        case actions.profile.DATA_FETCH_ERROR:{
             return {
                 ...state,
                 loading: false,
                 error: action.error
-            }
+            };
         }
         default: {
             return state;
