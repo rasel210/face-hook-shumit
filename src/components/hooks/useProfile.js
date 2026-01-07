@@ -1,7 +1,8 @@
 import { useContext } from "react"
-import { profileContext } from "../../context"
+import { ProfileContext } from "../../context";
+
 
 
 export const useProfile = () => {
-    return useContext(profileContext);
+    return useContext(ProfileContext);
 };

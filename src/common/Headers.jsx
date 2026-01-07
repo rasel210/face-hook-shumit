@@ -5,11 +5,15 @@ import avatar from '../assets/images/avatars/avatar_1.png'
 import { Link } from 'react-router-dom'
 import Logout from '../components/auth/LogOut'
 import {useAuth} from '../components/hooks/useAuth'
+import { useProfile } from '../components/hooks/useProfile'
 
 function Headers() {
 
   const {auth} = useAuth();
+  const {state} = useProfile();
   console.log("Header Auth:", auth);
+
+  const user = state?.user ?? auth?.user;
 
   return (
     <nav className="sticky top-0 z-50 border-b border-[#3F3F3F] bg-[#1E1F24] py-4">
@@ -34,9 +38,14 @@ function Headers() {
 
           <button className="flex-center !ml-8 gap-3">
             <Link to="/profile">
-            <span className="text-lg font-medium lg:text-xl">{auth?.user?.firstName}</span></Link>
+            <span className="text-lg font-medium lg:text-xl">
+              {user?.firstName} {' '} {user?.lastName}
+              </span>
+              </Link>
             <img className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
-              src={avatar} />
+              src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`} 
+              alt='avatar'
+              />
           </button>
         </div>
         
