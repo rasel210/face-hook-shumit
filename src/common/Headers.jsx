@@ -1,7 +1,6 @@
 import logo from '../assets/images/logo.svg'
 import HomeIcon from '../assets/icons/home.svg'
 import Notification from '../assets/icons/notification.svg'
-import avatar from '../assets/images/avatars/avatar_1.png'
 import { Link } from 'react-router-dom'
 import Logout from '../components/auth/LogOut'
 import {useAuth} from '../components/hooks/useAuth'
@@ -42,7 +41,7 @@ function Headers() {
               {user?.firstName} {' '} {user?.lastName}
               </span>
               </Link>
-            <img className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
+            <img className="w-8 h-8 lg:w-11 lg:h-11 rounded-full overflow-hidden"
               src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`} 
               alt='avatar'
               />
