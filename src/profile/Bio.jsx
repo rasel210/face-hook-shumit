@@ -4,7 +4,7 @@ import EditIcon from "../assets/icons/edit.svg";
 import useAxios from "../components/hooks/useAxios";
 import CheckIcon from "../assets/icons/check.svg";
 import { actions } from './../Action/index';
-import { data } from "autoprefixer";
+
 
 function Bio() {
   const { state, dispatch } = useProfile();

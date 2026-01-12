@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import { useProfile } from "../components/hooks/useProfile";
+import PostList from "../posts/PostList";
 
 function MyPosts() {
+  const { state } = useProfile();
+  const posts = state?.posts;
+
   return (
-    <div>MyPosts</div>
-  )
+    <>
+      <h4 className="mt-6 text-xl lg:mt-8 lg:text-2xl">Your Posts</h4>
+      <PostList posts={posts} />
+    </>
+  );
 }
 
-export default MyPosts
+export default MyPosts;
