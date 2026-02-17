@@ -29,7 +29,7 @@ function LoginPage() {
                             <p className="text-center text-xs text-gray-600/95 lg:text-sm">
                                 Don’t have account?
                                 <Link
-                                    className="text-white transition-all hover:text-lwsGreen hover:underline"
+                                    className="text-white transition-all hover:text-lwsGreen hover:underline p-2"
                                     to="/register"
                                 >Create New</Link>
                             </p>

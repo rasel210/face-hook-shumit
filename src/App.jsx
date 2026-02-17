@@ -17,7 +17,6 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route element={<HomePage />} path='/' />
           <Route element={<ProfilePage />} path='/profile' />
-
         </Route>
 
         <Route element={<LoginPage />} path='/login' />

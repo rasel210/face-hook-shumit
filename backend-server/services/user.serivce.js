@@ -43,7 +43,7 @@ const register = (reqBody, db) => {
     password: hashedPassword,
     firstName,
     lastName,
-    avatar: null,
+    avatar: "uploads/avatar/default-avatar.png",
     email,
   };
 

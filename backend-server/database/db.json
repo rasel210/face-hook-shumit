@@ -63,7 +63,8 @@
         }
       ],
       "likes": [
-        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
+        "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
+        "a5de6550-6be8-4c04-85a9-a38453bcf892"
       ],
       "createAt": "2024-02-24T12:17:09.169Z"
     },
@@ -469,7 +470,7 @@
       "password": "$2b$08$t5Aar/0hgHTMdCeLtn3KhOlWDVIAHcFUTkRPeWASPhbYAea5kxKvW",
       "firstName": "Saad",
       "lastName": "Hasan",
-      "avatar": "uploads/avatar/avatar-1768147943220-226044218.jpg",
+      "avatar": "uploads/avatar/avatar-1768666423051-360992446.png",
       "email": "saadh392@mail.com",
       "bio": "I am happy to learn react from LWS."
     },
@@ -514,6 +515,23 @@
       "avatar": "uploads/avatar/avatar-1708802845791-219561000.png",
       "email": "rambo@email.com",
       "bio": "I am Rambo!!!"
+    },
+    {
+      "id": "4dbf7884-ec82-419f-b5b6-70e65f7653cc",
+      "password": "$2b$08$kQw838YAzAluZ.CRbvMePupMh4GDbsPOf5PWFCSSXvvoLE/pcRCnG",
+      "firstName": "rambo",
+      "lastName": "bony",
+      "avatar": "uploads/avatar/default-avatar.png",
+      "email": "rambo@gmail.com",
+      "bio": ""
+    },
+    {
+      "id": "a5de6550-6be8-4c04-85a9-a38453bcf892",
+      "password": "$2b$08$3x4Qf/wy3F/9dbAk0TVk5eeGFECNoujO8azzebKQ4KzWMXe0GC/AW",
+      "firstName": "S.m",
+      "lastName": "Rasel",
+      "avatar": "uploads/avatar/default-avatar.png",
+      "email": "rasel@gmail.com"
     }
   ]
 }
