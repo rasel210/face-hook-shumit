@@ -5,7 +5,7 @@ const PostCommentList = ({ comments }) => {
         comments.map((comment) => (
           <div className="flex items-center gap-3 pt-4" key={comment.id}>
             <img
-              className="max-w-6 max-h-6 rounded-full"
+              className="h-6 w-6 rounded-full object-cover"
               src={`${import.meta.env.VITE_SERVER_BASE_URL}/${
                 comment?.author?.avatar
               }`}

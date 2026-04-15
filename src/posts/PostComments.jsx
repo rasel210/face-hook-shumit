@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useAvatar } from "../components/hooks/useAvatar";
 import PostCommentsList from "./PostCommentsList";
-import { api } from "./../api/index";
 import useAxios from "../components/hooks/useAxios";
+import useAuth from "../components/hooks/useAuth";
 
 const PostComments = ({ post }) => {
-  const { avatarURL } = useAvatar(post);
+  const {auth} = useAuth();
   const [showComments, setShowComments] = useState(false);
 
   const [comments, setComments] = useState(post?.comments);
@@ -20,29 +19,34 @@ const PostComments = ({ post }) => {
   const addComment = async (e) => {
     const keyCode = e.keyCode;
     if (keyCode === 13) {
-      const response = await api.patch(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/posts/${post.id}/comment`,
-        { comment });
+      try {
+        const response = await api.patch(
+          `${import.meta.env.VITE_SERVER_BASE_URL}/posts/${post.id}/comment`,
+          { comment },
+        );
 
         if (response.status === 200) {
-          setComments(...response.data.comments);
+          setComments([...response.data.comments]);
         }
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
   return (
     <div>
-      <div class="flex-center mb-3 gap-2 lg:gap-4">
+      <div className="flex-center mb-3 gap-2 lg:gap-4">
         <img
-          class="max-w-7 max-h-7 rounded-full lg:max-h-[34px] lg:max-w-[34px]"
-          src={avatarURL}
+          className="h-7 w-7 rounded-full object-cover lg:h-[34px] lg:w-[34px]"
+          src={`${import.meta.env.VITE_SERVER_BASE_URL}/${auth?.user?.avatar}`}
           alt="avatar"
         />
 
-        <div class="flex-1">
+        <div className="flex-1">
           <input
             type="text"
-            class="h-8 w-full rounded-full bg-lighterDark px-4 text-xs focus:outline-none sm:h-[38px]"
+            className="h-8 w-full rounded-full bg-lighterDark px-4 text-xs focus:outline-none sm:h-[38px]"
             name="post"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
@@ -53,8 +57,8 @@ const PostComments = ({ post }) => {
         </div>
       </div>
 
-      <div class="mt-4">
-        <button onClick={toggleActions} class="text-gray-300 max-md:text-sm">
+      <div className="mt-4">
+        <button onClick={toggleActions} className="text-gray-300 max-md:text-sm">
           All Comment ▾
         </button>
         {showComments && <PostCommentsList comments={comments} />}
