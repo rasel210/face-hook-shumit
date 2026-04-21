@@ -8,7 +8,7 @@ import AddPhoto from "../assets/icons/addPhoto.svg";
 import Field from "../common/Field";
 import { actions } from "../Action";
 
-function PostEntry( {onCreate}) {
+function PostEntry( {onCreate, post}) {
   const { auth } = useAuth();
   const { dispatch } = usePost();
   const { api } = useAxios();
@@ -19,19 +19,27 @@ function PostEntry( {onCreate}) {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      content: post?.content || "",
+    },
+  });
 
   const handlePostSubmit = async (formData) => {
     dispatch({ type: actions.post.DATA_FETCHING });
     try {
-      const response = await api.post(
+      const response = post?  await api.patch(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/posts/${post.id}`,
+         formData 
+      )
+      : await api.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/posts`,
-        { formData }
+         formData 
       );
 
       if (response.status === 200) {
         dispatch({
-          type: actions.post.DATA_CREATED,
+          type: post ? actions.post.DATA_EDITED : actions.post.DATA_CREATED, 
           data: response.data,
         });
 
@@ -50,7 +58,7 @@ function PostEntry( {onCreate}) {
   return (
     <div className="card relative">
       <h6 className="mb-3 text-center text-lg font-bold lg:text-xl">
-        Create Post
+        {post ? "Edit Post" : "Create Post"}
       </h6>
       <form onSubmit={handleSubmit(handlePostSubmit)}>
         <div className="mb-3 flex items-center justify-between gap-2 lg:mb-6 lg:gap-4">
@@ -58,8 +66,7 @@ function PostEntry( {onCreate}) {
             <img
               className="flex-center h-7 w-7 rounded-full"
               src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`}
-              alt="avaimport { actions } from './../Action/index';
-tar"
+              alt="avatar"
             />
             <div>
               <h6 className="text-lg lg:text-xl">
@@ -93,7 +100,7 @@ tar"
             className="auth-input bg-lwsGreen font-bold text-deepDark transition-all hover:opacity-90"
             type="submit"
           >
-            Post
+            {post ? "Update Post" : "Post"}
           </button>
         </div>
       </form>

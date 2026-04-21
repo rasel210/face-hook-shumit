@@ -12,7 +12,7 @@ import { usePost } from "../components/hooks/usePost";
 import { actions } from "../Action";
 import useAxios from "../components/hooks/useAxios";
 
-const PostHeader = ({ post }) => {
+const PostHeader = ({ post, onEdit }) => {
   const [showAction, setShowAction] = useState(false);
   const { avatarURL } = useAvatar(post);
   const { auth } = useAuth();
@@ -53,7 +53,8 @@ const PostHeader = ({ post }) => {
     <header className="flex items-center justify-between gap-4">
       <div className="flex items-center gap-3">
         <img
-          className="max-w-10 max-h-10 rounded-full lg:max-h-[58px] lg:max-w-[58px]"
+          className="h-10 w-10 rounded-full object-cover lg:h-[58px] lg:w-[58px]"
+
           src={avatarURL}
           alt="avatar"
         />
@@ -78,7 +79,8 @@ const PostHeader = ({ post }) => {
 
         {showAction && (
           <div className="action-modal-container">
-            <button className="action-menu-item hover:text-lwsGreen">
+            <button className="action-menu-item hover:text-lwsGreen"
+              onClick={onEdit} >
               <img src={EditIcon} alt="Edit" />
               Edit
             </button>

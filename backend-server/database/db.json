@@ -400,7 +400,7 @@
     },
     {
       "id": "782bbca7-dea3-4705-92aa-f191635c141a",
-      "content": "123",
+      "content": "Thats great",
       "image": null,
       "postType": "text",
       "author": {
@@ -423,35 +423,10 @@
       "likes": [
         "6fd3ed42-2275-4d5f-a436-e5a3bf586c56"
       ],
-      "createAt": "2024-02-25T06:59:36.184Z"
-    },
-    {
-      "id": "ae7a9d01-a4aa-46ad-b58a-f9c0e5ba1bf2",
-      "content": "456",
-      "image": null,
-      "postType": "text",
-      "author": {
-        "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-        "name": "Saad Hasan",
-        "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-      },
-      "comments": [],
-      "likes": [],
-      "createAt": "2024-02-25T07:01:10.425Z"
-    },
-    {
-      "id": "23be0512-6a10-4e71-b8cd-2ae47d9d7971",
-      "content": "SEII",
-      "image": null,
-      "postType": "text",
-      "author": {
-        "id": "6fd3ed42-2275-4d5f-a436-e5a3bf586c56",
-        "name": "Saad Hasan",
-        "avatar": "uploads/avatar/avatar-1708789609571-36760872.jpeg"
-      },
-      "comments": [],
-      "likes": [],
-      "createAt": "2024-02-25T07:02:51.676Z"
+      "createAt": "2024-02-25T06:59:36.184Z",
+      "formData": {
+        "content": "Thats good"
+      }
     }
   ],
   "comments": [],

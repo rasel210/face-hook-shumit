@@ -43,11 +43,11 @@ function ProfileImage() {
   return (
     <>
       <div
-        className="relative mb-8 max-h-[180px] max-w-[180px] rounded-full overflow-hidden 
-      lg:mb-11 lg:max-h-[218px] lg:max-w-[218px]"
+        className="relative mb-8 h-[180px] w-[180px] overflow-hidden rounded-full 
+      lg:mb-11 lg:h-[218px] lg:w-[218px]"
       >
         <img
-          className="w-full h-full object-cover rounded-full"
+          className="h-full w-full rounded-full object-cover"
           src={`${import.meta.env.VITE_SERVER_BASE_URL}/${state?.user?.avatar}`}
           alt={state?.user?.firstName}
         />
